@@ -1,0 +1,21 @@
+.post{
+  display: flex;
+  margin: 20px;
+  align-items: center;
+}
+
+.post_around{
+  border: solid 2px #666a86;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #788AA3;
+}
+
+.post div{
+  margin-left: 20px;
+}
+
+.img_post{
+  width: 50px;
+  /* border-radius: 50%; */
+}

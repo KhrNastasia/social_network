@@ -1,0 +1,32 @@
+.container{
+    display: grid;
+    grid-template-areas: 
+    "d m";
+    grid-template-rows: 100%;
+    grid-template-columns: 2fr 3fr;
+    width: 1110px;
+}
+
+.dialogs{
+    grid-area: d;
+}
+
+.dialog{
+    color: #666a86;
+    /* background-color: #788aa3; */
+    margin: 10px;
+    padding: 20px;
+    border: solid 2px #666a86;
+}
+
+.active{
+    color: #666a86;
+    /* background-color: #788aa3; */
+    margin: 5px;
+    padding: 20px;
+    border: solid 2px #666a86;
+}
+
+.messages{
+    grid-area: m;
+}

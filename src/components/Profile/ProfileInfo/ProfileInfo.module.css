@@ -1,0 +1,35 @@
+  /* #EDF6F9 */
+.back{
+  margin: 20px;
+  width: 1070px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile_wrap{
+  display: grid;
+  grid-template-areas: 
+  "i d";
+  grid-template-rows: 100%;
+  grid-template-columns: 250px;
+  grid-gap: 10px;
+}
+  
+.description{
+  margin-top: 20px;
+  grid-area: d;
+}
+
+.description div{
+  text-transform: uppercase;
+  color: #788aa3;
+  font-weight: 800;
+  font-size: 20px;
+}
+  /* #006D77 */
+  
+.avatar{
+  width: 200px;
+  margin: 20px;
+}

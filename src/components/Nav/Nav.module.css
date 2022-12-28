@@ -1,0 +1,22 @@
+.nav{
+  grid-area: n;
+  background-color: #b2c9ab;
+  padding: 20px;
+  /* height: 110px; */
+  /* color: cornsilk; */
+   /* antiquewhite; */
+}
+/* #FFDDD2 */
+.item{
+  text-decoration: none;
+  color: #788aa3;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+  /* #E29578 */
+  .active{
+    text-decoration: none;
+    color: #e8DDb5;
+    font-weight: 500;
+    text-transform: uppercase;
+  }

@@ -1,0 +1,44 @@
+.header_wrapper{
+  grid-area: h;
+  display: grid;
+  grid-template-areas: 
+  "l m";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 120px 10fr;
+  grid-gap: 10px;
+}
+
+.logo{
+  grid-area: l;
+  background-color: #788AA3;
+  /* border-style: solid;
+  border-width: 5px;
+  border-color: #006D77; */
+
+}
+/* #83C5BE; */
+.logo p{
+  width: 90px;
+  height: 45px;
+  margin: 8px auto;
+  /* margin: auto; */
+  font-size: 32px;
+  font-weight: 800;
+  color: #B2C9ab;
+}
+/* #006D77 */
+.main{
+  margin-top: 0;
+  grid-area: m;
+  background-color: #92B6B1;
+  display: flex;
+  justify-content: end;
+  color: #666a86;
+  font-weight: 800;
+  font-size: 40px;
+}
+/* #E29578 #FFDDD2*/
+.main p{
+  margin-top: auto;
+  margin-right: 20px;
+}
