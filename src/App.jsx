@@ -9,7 +9,6 @@ import Nav from "./components/Nav/Nav";
 import News from "./components/News/News";
 import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
-import Post from "./components/Profile/MyPosts/Post/Post";
 
 const App = (props) => {
 
@@ -25,7 +24,7 @@ const App = (props) => {
                         <Route path="/news/*" element={<News/>}/>
                         <Route path="/music/*" element={<Music/>}/>
                         <Route path="/dialogs/*" element={<Dialogs dialogs={props.Data.dialogsPage} />}/>
-                        <Route path="/profile/*" element={<Profile posts={props.Data.profilePage}/>}/>
+                        <Route path="/profile/*" element={<Profile posts={props.Data.profilePage} addPost={props.addPost}/>}/>
                     </Routes>
                 </div>
                 <Footer/>

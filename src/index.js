@@ -3,17 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-import DialogItem from "./components/Dialogs/DialogItem/DialogItem";
-import MessageItem from "./components/Dialogs/MessageItem/MessageItem";
-import Post from "./components/Profile/MyPosts/Post/Post";
-import state from "./components/redux/state";
+import state, {addPost} from "./components/redux/state";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+// addPost('kfkfkf');
+
 root.render(
     <React.StrictMode>
-        <App Data={state}/>
+        <App Data={state} addPost={addPost}/>
     </React.StrictMode>
 );
 

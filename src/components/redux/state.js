@@ -1,13 +1,13 @@
 let state = {
     profilePage:{
-                postsData: [
+        postsData: [
             {id: "1", msg: "Hi, how are you?", count: '15'},
             {id: "2", msg: "It's my first post", count: '6'},
             {id: "3", msg: "Cool!!", count: '1000'}
         ]
     },
     dialogsPage:{
-                dialogsData: [
+        dialogsData: [
             {id: 1, name: "Oksana"},
             {id: 2, name: "Stas"},
             {id: 3, name: "Katya"},
@@ -22,6 +22,18 @@ let state = {
             {id: 5, msg: "Cool!"},
         ]
     }
+}
+
+export let addPost = (PostMessage) => {
+    debugger;
+    const NewPost ={
+        id: 5,
+        msg: PostMessage,
+        count: 0
+    };
+debugger;
+    state.profilePage.postsData.push(NewPost);
+    debugger;
 }
 
 export default state;
