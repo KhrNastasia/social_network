@@ -13,7 +13,7 @@ import Post from "./components/Profile/MyPosts/Post/Post";
 
 const App = (props) => {
 
-
+// console.log(props.Data)
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -24,8 +24,8 @@ const App = (props) => {
                         <Route path="/settings/*" element={<Settings/>}/>
                         <Route path="/news/*" element={<News/>}/>
                         <Route path="/music/*" element={<Music/>}/>
-                        <Route path="/dialogs/*" element={<Dialogs msgData={props.Data[1]} diaData={props.Data[0]}/>}/>
-                        <Route path="/profile/*" element={<Profile posts={props.Data[2]}/>}/>
+                        <Route path="/dialogs/*" element={<Dialogs dialogs={props.Data.dialogsPage} />}/>
+                        <Route path="/profile/*" element={<Profile posts={props.Data.profilePage}/>}/>
                     </Routes>
                 </div>
                 <Footer/>
