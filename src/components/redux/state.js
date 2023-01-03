@@ -1,5 +1,4 @@
-import {rerenderEntireTree} from "../../render";
-
+let rerenderEntireTree = () =>{};
 
 let state = {
     profilePage:{
@@ -7,7 +6,8 @@ let state = {
             {id: "1", msg: "Hi, how are you?", count: '15'},
             {id: "2", msg: "It's my first post", count: '6'},
             {id: "3", msg: "Cool!!", count: '1000'}
-        ]
+        ],
+        newPostText: "бла бла бла"
     },
     dialogsPage:{
         dialogsData: [
@@ -27,14 +27,27 @@ let state = {
     }
 }
 
-export let addPost = (PostMessage) => {
-    const NewPost ={
+window.state = state;
+
+export let addPost = () => {
+    const newPost ={
         id: 5,
-        msg: PostMessage,
+        msg: state.profilePage.newPostText,
         count: 0
     };
-    state.profilePage.postsData.push(NewPost);
-    rerenderEntireTree(state);
+    state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree();
+}
+
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree();
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer; // наблюдатель
+
 }
 
 export default state;
