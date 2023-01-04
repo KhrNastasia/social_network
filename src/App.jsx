@@ -12,7 +12,7 @@ import Settings from "./components/Settings/Settings";
 
 const App = (props) => {
 
-// console.log(props.Data)
+console.log(props)
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -20,6 +20,7 @@ const App = (props) => {
                 <Nav/>
                 <div className="app-wrapper-content">
                     <Routes>
+
                         <Route path="/settings/*" element={<Settings/>}/>
                         <Route path="/news/*" element={<News/>}/>
                         <Route path="/music/*" element={<Music/>}/>

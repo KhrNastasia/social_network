@@ -1,4 +1,4 @@
-import state, {addPost, subscribe, updateNewPostText} from "./components/redux/state";
+import store from "./components/redux/state";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -7,19 +7,21 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export let rerenderEntireTree = () =>{
+export let rerenderEntireTree = (state) =>{
     root.render(
         <React.StrictMode>
-            <App Data={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
+            <App Data={store.getState()}
+                 addPost={store.addPost.bind(store)}
+                 updateNewPostText={store.updateNewPostText.bind(store)}/>
         </React.StrictMode>
     );
 }
 
 reportWebVitals();
 
-rerenderEntireTree();
+rerenderEntireTree(store.getState());
 
-subscribe(rerenderEntireTree);
+store.subscribe(rerenderEntireTree);
 
 
 
