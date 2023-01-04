@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPD_MSG = 'UPD-MSG'
 
 let store = {
     _state: {
@@ -25,7 +27,8 @@ let store = {
                 {id: 3, msg: "What`s your name?"},
                 {id: 4, msg: "My name is Stacy."},
                 {id: 5, msg: "Cool!"},
-            ]
+            ],
+            newMsgData: "Hello from Future"
         }
     },
     _callSubscriber() {
@@ -44,9 +47,9 @@ let store = {
     dispatch(action) { //{ type: "ADD-POST" }
         if (action.type === ADD_POST) {
             const newPost = {
-                id: 5,
+                id: '5',
                 msg: this._state.profilePage.newPostText,
-                count: 0
+                count: '0'
             };
             this._state.profilePage.postsData.push(newPost);
             this._state.profilePage.newPostText = '';
@@ -54,19 +57,31 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber();
+        } else if (action.type === ADD_MESSAGE){
+            const newMsg ={
+                id: 10,
+                msg: this._state.dialogsPage.newMsgData,
+            }
+            this._state.dialogsPage.msgData.push(newMsg);
+            this._state.dialogsPage.newMsgData = '';
+            this._callSubscriber();
+        } else if (action.type === UPD_MSG){
+            this._state.dialogsPage.newMsgData = action.msg_text;
+            this._callSubscriber();
         }
     },
-}
-    //action creator для добавления поста на страницу
-    export const addPostActionCreator = () => {
+};
+
+//action creator для добавления поста на страницу
+export const addPostActionCreator = () => {
 
         return {
             type: ADD_POST
         }
     };
 
-    //action creator для обновления текста в поле ввода
-    export const updateNewPostTextActionCreator = (text) => {
+//action creator для обновления текста в поле ввода
+export const updateNewPostTextActionCreator = (text) => {
 
         return{
             type: UPDATE_NEW_POST_TEXT,
@@ -74,6 +89,20 @@ let store = {
         }
     };
 
+//добавление сообщения на эркан
+export const addNewMsgActionCreator = () => {
+    return{
+        type: ADD_MESSAGE
+    }
+}
+
+//добавление текста сообщения в текстовое поле
+export const updNewMsgActionCreator = (msg_text) => {
+    return{
+        type: UPD_MSG,
+        msg_text: msg_text
+    }
+}
 
 window.store = store;
 export default store;
