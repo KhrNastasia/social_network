@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store = {
     _state: {
         profilePage: {
@@ -37,8 +40,9 @@ let store = {
 
     },
 
+    //action - объект, у которого обязательно есть свойство type
     dispatch(action) { //{ type: "ADD-POST" }
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             const newPost = {
                 id: 5,
                 msg: this._state.profilePage.newPostText,
@@ -47,12 +51,29 @@ let store = {
             this._state.profilePage.postsData.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber();
         }
-    }
+    },
 }
+    //action creator для добавления поста на страницу
+    export const addPostActionCreator = () => {
+
+        return {
+            type: ADD_POST
+        }
+    };
+
+    //action creator для обновления текста в поле ввода
+    export const updateNewPostTextActionCreator = (text) => {
+
+        return{
+            type: UPDATE_NEW_POST_TEXT,
+            newText: text,
+        }
+    };
+
 
 window.store = store;
 export default store;

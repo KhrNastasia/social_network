@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from './Post/Post';
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../redux/state";
 
 const MyPosts = (props) => {
     let postEl = props.posts.map(p => <Post key={p.id} message={p.msg} count={p.count}/>);
@@ -10,17 +11,14 @@ const MyPosts = (props) => {
     //вызываетяся когда нажимается кнопка
     const addPost = () => {
         //props.addNewPost();
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
 
     //вызывается когда меняется textarea
     const onPostChange = () => {
         let text = newPostElement.current.value;
         //props.updatePostText(text);
-        props.dispatch({
-            type: 'UPDATE-NEW-POST-TEXT',
-            newText: text
-        });
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (
