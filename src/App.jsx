@@ -26,8 +26,7 @@ console.log(props)
                         <Route path="/music/*" element={<Music/>}/>
                         <Route path="/dialogs/*" element={<Dialogs dialogs={props.Data.dialogsPage} />}/>
                         <Route path="/profile/*" element={<Profile posts={props.Data.profilePage}
-                                                                   updatePost={props.updateNewPostText}
-                                                                   addPost={props.addPost}/>}/>
+                                                                   dispatch={props.dispatch}/>}/>
                     </Routes>
                 </div>
                 <Footer/>
