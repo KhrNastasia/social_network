@@ -1,26 +1,22 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator} from '../../redux/profile_reducer';
 import classes from "./MyPosts.module.css";
 import Post from './Post/Post';
 
-
 const MyPosts = (props) => {
-
+debugger;
     let postEl = props.posts.map(p => <Post key={p.id} message={p.msg} count={p.count}/>);
 
     let newPostElement = React.createRef();
 
     //вызываетяся когда нажимается кнопка
     const addPost = () => {
-        //props.addNewPost();
-        props.dispatch(addPostActionCreator());
+        props.addNewPost();
     }
 
     //вызывается когда меняется textarea
     const onPostChange = () => {
         let text = newPostElement.current.value;
-        //props.updatePostText(text);
-        props.dispatch(updateNewPostTextActionCreator(text));
+        props.store.updateNewPostText(text);
     }
 
     return (
