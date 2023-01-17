@@ -4,7 +4,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 
 const Dialogs = (props) => {
-// console.log(props)
+ console.log(props)
 
     let NewMsgElement = React.createRef();
 
