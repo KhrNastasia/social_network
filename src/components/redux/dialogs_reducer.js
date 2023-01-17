@@ -24,16 +24,24 @@ const dialogsReducer = (state = initialState, action) =>{
     // eslint-disable-next-line default-case
     switch (action.type){
         case ADD_MESSAGE:
-            const newMsg ={
+            {
+                const newMsg ={
                 id: 10,
                 msg: state.newMsgData,
+                }
+                let stateCopy = {...state};
+                stateCopy.msgData = [...state.msgData];
+                stateCopy.msgData.push(newMsg);
+                stateCopy.newMsgData = ''; 
+                return stateCopy;
             }
-            state.msgData.push(newMsg);
-            state.newMsgData = ''; 
-            return state;
         case UPD_MSG:
-            state.newMsgData = action.msg_text;
-            return state;
+            {    
+                let stateCopy = {...state};
+                stateCopy.newMsgData = [...state.newMsgData]
+                stateCopy.newMsgData = action.msg_text;
+                return stateCopy;
+            }
         default: 
             return state;
     }
