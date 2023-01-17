@@ -3,11 +3,14 @@ import { addPostActionCreator, updateNewPostTextActionCreator} from '../../redux
 import MyPosts from './MyPosts';
 
 let mapStateToProps = (state) => {
+    console.log(state);
     return {
         newPostText: state.profilePage.newPostText,
-        posts: state.profilePage.postsData
+        posts: state.profilePage.postsData,
     }
 }
+
+
 
 let mapDispatchToProps = (dispatch) => {
     return{

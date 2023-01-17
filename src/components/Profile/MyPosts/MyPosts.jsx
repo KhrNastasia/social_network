@@ -16,7 +16,7 @@ debugger;
     //вызывается когда меняется textarea
     const onPostChange = () => {
         let text = newPostElement.current.value;
-        props.store.updateNewPostText(text);
+        props.updateNewPostText(text);
     }
 
     return (
