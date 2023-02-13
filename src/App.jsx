@@ -9,6 +9,7 @@ import News from "./components/News/News";
 import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 const App = (props) => {
 // debugger;
@@ -25,6 +26,7 @@ const App = (props) => {
                         <Route path="/music/*" element={<Music/>}/>
                         <Route path="/dialogs/*" element={<DialogsContainer dialogInfo={props.store} />}/>
                         <Route path="/profile/*" element={<Profile store={props.store}/>}/>
+                        <Route path="/users/*" element={<UsersContainer />}/>
                     </Routes>
                 </div>
                 <Footer/>
