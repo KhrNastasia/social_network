@@ -1,15 +1,19 @@
 import React from "react";
+import Preloader from "../../common/Preloader/Preloader";
 import classes from "./ProfileInfo.module.css";
 
 const ProfileInfo = (props) => {
-  // console.log(props)
+  console.log(props);
 
+  // if (!props.profile) {
+  //   return <Preloader />;
+  // } else {
   return (
     <div>
       <div>
         <img
           className={classes.back}
-          src="https://phonoteka.org/uploads/posts/2021-04/1619376445_13-phonoteka_org-p-khayao-miyadzaki-foni-14.jpg"
+          src="https://st.renderu.com/image/1200x/26357"
           alt=""
         />
       </div>
@@ -17,6 +21,7 @@ const ProfileInfo = (props) => {
         <div>
           <img
             className={classes.avatar}
+            // src={props.profile.photos.large}
             src="https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_640.png"
             alt=""
           />
@@ -34,5 +39,6 @@ const ProfileInfo = (props) => {
     </div>
   );
 };
+// };
 
 export default ProfileInfo;

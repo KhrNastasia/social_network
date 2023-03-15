@@ -1,0 +1,9 @@
+.img {
+  width: 100px;
+  border: 1px;
+  border-radius: 50%;
+}
+
+.selectedPage {
+  font-weight: bold;
+}
